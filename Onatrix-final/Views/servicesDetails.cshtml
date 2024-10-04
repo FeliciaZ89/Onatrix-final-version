@@ -1,0 +1,131 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = "mainLayout.cshtml";
+
+	ViewBag.Title = Model?.Value("detailsPageTitle") ?? null;
+    var leftImage = Model?.Value<IPublishedContent>("detailsLeftImage")?.Url() ?? "";
+    var rightImage = Model?.Value<IPublishedContent>("detailsRightImage")?.Url() ?? "";
+    var aboutImage = Model?.Value<IPublishedContent>("aboutUsImage")?.Url() ?? "";
+    var riskImage = Model?.Value<IPublishedContent>("serviceImage")?.Url() ?? "";
+    var riskImage2 = Model?.Value<IPublishedContent>("serviceImage2")?.Url() ?? "";
+    var BackgroundImage = Model?.Value<IPublishedContent>("serviceDetailsBackgroundImage")?.Url() ?? "";
+    var TeamMemberImage = Model?.Value<IPublishedContent>("serviceDetailsTeamMemberImage")?.Url() ?? "";
+}
+<section id="about" class="about">
+    <img class="left-image" src="@leftImage" alt="@Model?.Value("detailsLeftImage")">
+    <div class="container">
+        <div class="about-title">
+            <h1>@Model?.Value("detailsTitle")</h1>
+            <div class="about-directions">
+                <a href="@Model?.Value("detailsHomeUrl")"> @Model?.Value("detailsHomePageName") </a>
+                <i class="fa-solid fa-arrow-right"></i>
+                <a href="@Model?.Value("detailsServicesPageUrl")"> @Model?.Value("detailsServicesPageName") </a>
+                <i class="fa-solid fa-arrow-right"></i>
+                <p>@Model?.Value("detailsThisPageName")</p>
+            </div>
+        </div>
+    </div>
+    <img class="right-image" src="@rightImage" alt="@Model?.Value("detailsRightImage")">
+</section>
+
+<section id="risk" class="risk">
+    <div class="container">
+        <div class="left-side">
+            <div class="about-us">
+                <div class="about-text">
+                    <h4>@Model?.Value("detailsAboutUsTitle")</h4>
+                    <img src="@aboutImage" alt="@Model?.Value("aboutUsImage")">
+                    <p>@Model?.Value("aboutUsParagraph") </p>
+                </div>
+                <div class="formular">
+                    <h2>How can we help you?</h2>
+                    <p>online support 24/7, we are here to help you</p>
+                    <form>
+                        <div class="form">
+                            <input type="text" placeholder="Email address" name="mail" required>
+                            <i class="fa-regular fa-envelope"></i>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="right-side">
+            <div class="management">
+                <div class="risk-management-one">
+                    <img class="meeting" src="@riskImage" alt="@Model?.Value("serviceImage")">
+                    <h4>@Model?.Value("serviceDetailsKeyPoint")</h4>
+                    <ul>
+                        <li>@Model?.Value("serviceDetailsElement1")</li>
+                        <li>@Model?.Value("serviceDetailsElement2")</li>
+                        <li>@Model?.Value("serviceDetailsElement3")</li>
+                    </ul>
+                </div>
+                <div class="risk-management-two">
+                    <h4>@Model?.Value("serviceDetailsArticleTitle")</h4>
+                    <p>@Model?.Value("serviceDetailsArticleText1")</p>
+                    <p>@Model?.Value("serviceDetailsArticleText2")</p>
+                    <p>@Model?.Value("serviceDetailsArticleText3")</p>
+                    <ul>
+                        <li>@Model?.Value("serviceDetailsList1")</li>
+                        <li>@Model?.Value("serviceDetailsList2")</li>
+                        <li>@Model?.Value("serviceDetailsList3")</li>
+                    </ul>
+                    <p>@Model?.Value("serviceDetailsArticleText4")</p>
+                    <p>@Model?.Value("serviceDetailsArticleText5")</p>
+                </div>
+                <div class="risk-management-three">
+                    <img class="article-images" src="@riskImage2" alt="@Model?.Value("serviceImage2")">
+                    <h4>@Model?.Value("serviceDetailsArticleLastTitle")</h4>
+                    <p>@Model?.Value("serviceDetailsParagraph")</p>
+                    <ul>
+                        <li>@Model?.Value("list1")</li>
+                        <li>@Model?.Value("list2")</li>
+                        <li>@Model?.Value("list3")</li>
+                        <li>@Model?.Value("list3")</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="last-form">
+    <div class="container">
+        <h3>Have a question ?</h3>
+        <form>
+            <div class="email">
+                <input type="text" placeholder="Name" name="name" required>
+                <input type="text" placeholder="Email" name="email" required>
+            </div>
+            <div class="message">
+                <textarea name="message" rows="10" placeholder="Question" required></textarea>
+            </div>
+        </form>
+        <div class="send">
+            <button>Submit</button>
+        </div>
+    </div>
+</section>
+<section id="about-contact-us" class="about-contact-us">
+    <div class="container">
+        <div class="background-image">
+            <img class="background" src="@BackgroundImage" alt="@Model?.Value("serviceDetailsBackgroundImage")">
+            <img class="team-member" src="@TeamMemberImage" alt="@Model?.Value("serviceDetailsTeamMemberImage")">
+        </div>
+        <div class="about-information-contact">
+            <h2>@Model?.Value("infoHeadline")</h2>
+            <div class="info">
+                <p class="office"><i class="fa-solid fa-location-dot"></i>Office location</p>
+                <p class="office-info">@Model?.Value("infoOfficeLocation")</p>
+            </div>
+            <div class="info">
+                <p class="office"><i class="fa-solid fa-phone-flip"></i>Phone number</p>
+                <p class="office-info">@Model?.Value("infoPhoneNumber")</p>
+            </div>
+            <div class="info">
+                <p class="office"><i class="fa-regular fa-envelope"></i>E-mail address</p>
+                <p class="office-info">@Model?.Value("infoEmail")</p>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,105 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = "mainLayout.cshtml";
+
+	ViewBag.Title = Model?.Value("contactsPageTitle") ?? null;
+
+    var leftImage = Model?.Value<IPublishedContent>("contactsLeftImage")?.Url() ?? "";
+    var rightImage = Model?.Value<IPublishedContent>("contactsRightImage")?.Url() ?? "";
+    var BackgroundImage = Model?.Value<IPublishedContent>("contactsBackgroundImage")?.Url() ?? "";
+    var TeamMemberImage = Model?.Value<IPublishedContent>("contactsTeamMemberImage")?.Url() ?? "";
+    var BackgroundMapImage = Model?.Value<IPublishedContent>("contactsMapImage")?.Url() ?? "";
+
+    var One = Model?.Value<IPublishedContent>("partner1")?.Url() ?? "";
+
+    var Two = Model?.Value<IPublishedContent>("partner2")?.Url() ?? "";
+
+    var Three = Model?.Value<IPublishedContent>("partner3")?.Url() ?? "";
+
+    var Four = Model?.Value<IPublishedContent>("partner4")?.Url() ?? "";
+
+    var Five = Model?.Value<IPublishedContent>("partner5")?.Url() ?? "";
+
+    var Six = Model?.Value<IPublishedContent>("partner6")?.Url() ?? "";
+
+
+}
+<section id="about" class="about">
+    <img class="left-image" src="@leftImage" alt="@Model?.Value("contactsLeftImage")">
+    <div class="container">
+        <div class="about-title">
+            <h1>@Model?.Value("contactsTitle")</h1>
+            <div class="about-directions">
+                <a href="@Model?.Value("contactsHomeUrl")"> @Model?.Value("contactsHomePageName") </a>
+                <i class="fa-solid fa-arrow-right"></i>
+                <p>@Model?.Value("contactsThisPageName")</p>
+            </div>
+        </div>
+    </div>
+    <img class="right-image" src="@rightImage" alt="@Model?.Value("contactsRightImage")">
+</section>
+
+<section id="about-contact-us" class="about-contact-us">
+    <div class="container">
+        <div class="background-image">
+            <img class="background" src="@BackgroundImage" alt="@Model?.Value("contactsBackgroundImage")">
+            <img class="team-member" src="@TeamMemberImage" alt="@Model?.Value("contactsTeamMemberImage")">
+        </div>
+        <div class="about-information-contact">
+            <h2>@Model?.Value("contactsInfoHeadline")</h2>
+            <div class="info">
+                <p class="office"><i class="fa-solid fa-location-dot"></i>Office location</p>
+                <p class="office-info">@Model?.Value("contactsInfoOfficeLocation")</p>
+            </div>
+            <div class="info">
+                <p class="office"><i class="fa-solid fa-phone-flip"></i>Phone number</p>
+                <p class="office-info">@Model?.Value("contactsInfoPhoneNumber")</p>
+            </div>
+            <div class="info">
+                <p class="office"><i class="fa-regular fa-envelope"></i>E-mail address</p>
+                <p class="office-info">@Model?.Value("contactsInfoEmail")</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="map" class="map">
+    <img class="background-img" src="@BackgroundMapImage" alt="@Model?.Value("contactsMapImage")">
+    <div class="container">
+        <div class="formular">
+            <h5>@Model?.Value("contactsFormTitle")</h5>
+            <h2>@Model?.Value("contactsFormHeadline")</h2>
+            <p>@Model?.Value("contactsText")</p>
+        </div>
+        <div class="form">
+            <form>
+                <div class="form-one">
+                    <input type="text" placeholder="Name" name="name" />
+                    <input type="text" placeholder="Phone" name="phone" />
+                </div>
+                <div class="form-two">
+                    <input type="text" placeholder="Email Address" name="email" />
+                    <div class="consult">
+                        <input type="text" placeholder="Financial consulting" name="menu" />
+                        <i class="fa-solid fa-caret-down"></i>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="submit">
+            <button>@Model?.Value("buttonText")</button>
+        </div>
+    </div>
+</section>
+
+<section id="partners" class="partners">
+    <div class="container">
+        <img class="partner-image" src="@One">
+        <img class="partner-image" src="@Two">
+        <img class="partner-image" src="@Three">
+        <img class="partner-image" src="@Four">
+        <img class="partner-image" src="@Five">
+        <img class="partner-image" src="@Six">
+    </div>
+</section>

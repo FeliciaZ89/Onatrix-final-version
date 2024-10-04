@@ -1,0 +1,140 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = "mainLayout.cshtml";
+
+    ViewBag.Title = Model?.Value("projectPageTitle") ?? null;
+
+
+
+    var leftImage = Model?.Value<IPublishedContent>("projectsLeftImage")?.Url() ?? "";
+    var rightImage = Model?.Value<IPublishedContent>("projectsRightImage")?.Url() ?? "";
+    var BackgroundImage = Model?.Value<IPublishedContent>("projectsBackgroundImage")?.Url() ?? "";
+    var TeamMemberImage = Model?.Value<IPublishedContent>("projectsTeamMemberImage")?.Url() ?? "";
+    var project1 = Model?.Value<IPublishedContent>("projectImg1")?.Url() ?? "";
+    var project2 = Model?.Value<IPublishedContent>("projectImg2")?.Url() ?? "";
+    var project3 = Model?.Value<IPublishedContent>("projectImg3")?.Url() ?? "";
+    var project4 = Model?.Value<IPublishedContent>("projectImg4")?.Url() ?? "";
+}
+
+
+
+
+<section id="about" class="about">
+    <img class="left-image" src="@leftImage" alt="@Model?.Value("projectsLeftImage")">
+    <div class="container">
+        <div class="about-title">
+            <h1>@Model?.Value("projectsTitle")</h1>
+            <div class="about-directions">
+                <a href="@Model?.Value("servicesHomeUrl")"> @Model?.Value("projectsHomePageName") </a>
+                <i class="fa-solid fa-arrow-right"></i>
+                <p>@Model?.Value("projectsThisPageName")</p>
+            </div>
+        </div>
+    </div>
+    <img class="right-image" src="@rightImage" alt="@Model?.Value("projectsRightImage")">
+</section>
+
+<section id="projects" class="projects">
+    <div class="container">
+        <div class="left-side">
+            <div class="content">
+                <div class="articles">
+                    <div class="image">
+                        <img class="images" src="@project1" alt="@Model?.Value("projectImg1")">
+                    </div>
+                    <div class="articles">
+                        <h4>@Model?.Value("projectTitle1")</h4>
+                        <p><i class="fa-regular fa-calendar-days"></i>@Model?.Value("projectDate1")</p>
+                        <p class="paragraph">@Model?.Value("projectDescription1")</p>
+                        <a href="@Model?.Value("projectUrl1")">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="articles">
+                    <div class="image">
+                        <img class="images" src="@project2" alt="@Model?.Value("projectImg2")">
+                    </div>
+                    <div class="articles">
+                        <h4>@Model?.Value("projectTitle2")</h4>
+                        <p><i class="fa-regular fa-calendar-days"></i>@Model?.Value("projectDate2")</p>
+                        <p class="paragraph">@Model?.Value("projectDescription2")</p>
+                        <a href="@Model?.Value("projectUrl2")">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="articles">
+                    <div class="image">
+                        <img class="images" src="@project3" alt="@Model?.Value("projectImg3")">
+                    </div>
+                    <div class="articles">
+                        <h4>@Model?.Value("projectTitle3")</h4>
+                        <p><i class="fa-regular fa-calendar-days"></i>@Model?.Value("projectDate3")</p>
+                        <p class="paragraph">@Model?.Value("projectDescription3")</p>
+                        <a href="@Model?.Value("projectUrl3")">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="articles">
+                    <div class="image">
+                        <img class="images" src="@project4" alt="@Model?.Value("projectImg4")">
+                    </div>
+                    <div class="articles">
+                        <h4>@Model?.Value("projectTitle4")</h4>
+                        <p><i class="fa-regular fa-calendar-days"></i>@Model?.Value("projectDate4")</p>
+                        <p class="paragraph">@Model?.Value("projectDescription4")</p>
+                        <a href="@Model?.Value("projectUrl4")">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+          
+        </div>
+
+        <div class="right-side">
+            <div class="tag">
+                <h2>Tags</h2>
+                <div class="tags">
+                    <button>@Model?.Value("tag1")</button>
+                    <button>@Model?.Value("tag2")</button>
+                    <button>@Model?.Value("tag3")</button>
+                    <button>@Model?.Value("tag4")</button>
+                    <button>@Model?.Value("tag5")</button>
+                    <button>@Model?.Value("tag6")</button>
+                    <button>@Model?.Value("tag7")</button>
+                    <button>@Model?.Value("tag8")</button>
+                </div>
+            </div>
+            <div class="formular">
+                <h2>How can we help you?</h2>
+                <p>online support 24/7, we are here to help you</p>
+                <form>
+                    <div class="form">
+                        <input type="text" placeholder="Email address" name="email" required>
+                        <i class="fa-regular fa-envelope"></i>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="about-contact-us" class="about-contact-us">
+    <div class="container">
+        <div class="background-image">
+            <img class="background" src="@BackgroundImage" alt="@Model?.Value("projectsBackgroundImage")">
+            <img class="team-member" src="@TeamMemberImage" alt="@Model?.Value("projectsTeamMemberImage")">
+        </div>
+        <div class="about-information-contact">
+            <h2>@Model?.Value("projectsInfoHeadline")</h2>
+            <div class="info">
+                <p class="office"><i class="fa-solid fa-location-dot"></i>Office location</p>
+                <p class="office-info">@Model?.Value("projectsInfoOfficeLocation")</p>
+            </div>
+            <div class="info">
+                <p class="office"><i class="fa-solid fa-phone-flip"></i>Phone number</p>
+                <p class="office-info">@Model?.Value("projectsInfoPhoneNumber")</p>
+            </div>
+            <div class="info">
+                <p class="office"><i class="fa-regular fa-envelope"></i>E-mail address</p>
+                <p class="office-info">@Model?.Value("projectsInfoEmail")</p>
+            </div>
+        </div>
+    </div>
+</section>

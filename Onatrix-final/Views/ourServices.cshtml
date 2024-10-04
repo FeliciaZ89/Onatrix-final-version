@@ -1,0 +1,143 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+    Layout = "mainLayout.cshtml";
+
+    ViewBag.Title = Model?.Value("servicesPageTitle") ?? null;
+
+    var leftImage = Model?.Value<IPublishedContent>("servicesLeftImage")?.Url() ?? "";
+
+    var rightImage = Model?.Value<IPublishedContent>("servicesRightImage")?.Url() ?? "";
+
+    var BackgroundImage = Model?.Value<IPublishedContent>("servicesBackgroundImage")?.Url() ?? "";
+    var TeamMemberImage = Model?.Value<IPublishedContent>("servicesTeamMemberImage")?.Url() ?? "";
+
+    var Article1 = Model?.Value<IPublishedContent>("serviceArticleImage1")?.Url() ?? "";
+
+    var Article2 = Model?.Value<IPublishedContent>("serviceArticleImage2")?.Url() ?? "";
+
+    var Article3 = Model?.Value<IPublishedContent>("serviceArticleImage3")?.Url() ?? "";
+
+    var Article4 = Model?.Value<IPublishedContent>("serviceArticleImage4")?.Url() ?? "";
+
+    var Article5 = Model?.Value<IPublishedContent>("serviceArticleImage5")?.Url() ?? "";
+
+    var Article6 = Model?.Value<IPublishedContent>("serviceArticleImage6")?.Url() ?? "";
+}
+}
+
+<section id="about" class="about">
+    <img class="left-image" src="@leftImage" alt="@Model?.Value("servicesLeftImage")">
+    <div class="container">
+        <div class="about-title">
+            <h1>@Model?.Value("servicesTitle")</h1>
+            <div class="about-directions">
+                <a href="@Model?.Value("servicesHomeUrl")"> @Model?.Value("servicesHomePageName") </a>
+                <i class="fa-solid fa-arrow-right"></i>
+                <p>@Model?.Value("servicesThisPageName")</p>
+            </div>
+        </div>
+    </div>
+    <img class="right-image" src="@rightImage" alt="@Model?.Value("servicesRightImage")">
+</section>
+
+<section id="services" class="services">
+    <div class="container">
+        <div class="content">
+            <div class="services-headline">
+                <h2>@Model?.Value("serviceHeadline")</h2>
+            </div>
+            <div class="services-articles">
+                <a href="/details" style="text-decoration: none; color: inherit;">
+                    <article>
+                        <h5>@Model?.Value("serviceArticleTitle1")</h5>
+                        <img class="article-images" src="@Article1" alt="@Model?.Value("serviceArticleImage1")">
+                        <p>@Model?.Value("serviceArticleDescription1")</p>
+                    </article>
+                </a>
+                <a href="/details" style="text-decoration: none; color: inherit;">
+                    <article>
+                        <h5>@Model?.Value("serviceArticleTitle2")</h5>
+                        <img class="article-images" src="@Article2" alt="@Model?.Value("serviceArticleImage2")">
+                        <p>@Model?.Value("serviceArticleDescription2")</p>
+                    </article>
+                </a>
+                <a href="/details" style="text-decoration: none; color: inherit;">
+                    <article>
+                        <h5>@Model?.Value("serviceArticleTitle3")</h5>
+                        <img class="article-images" src="@Article3" alt="@Model?.Value("serviceArticleImage3")">
+                        <p>@Model?.Value("serviceArticleDescription3")</p>
+                    </article>
+                </a>
+                <a href="/details" style="text-decoration: none; color: inherit;">
+                    <article>
+                        <h5>@Model?.Value("serviceArticleTitle4")</h5>
+                        <img class="article-images" src="@Article4" alt="@Model?.Value("serviceArticleImage4")">
+                        <p>@Model?.Value("serviceArticleDescription4")</p>
+                    </article>
+                </a>
+                <a href="/details" style="text-decoration: none; color: inherit;">
+                    <article>
+                        <h5>@Model?.Value("serviceArticleTitle5")</h5>
+                        <img class="article-images" src="@Article5" alt="@Model?.Value("serviceArticleImage5")">
+                        <p>@Model?.Value("serviceArticleDescription5")</p>
+                    </article>
+                </a>
+                <a href="/details" style="text-decoration: none; color: inherit;">
+                    <article>
+                        <h5>@Model?.Value("serviceArticleTitle6")</h5>
+                        <img class="article-images" src="@Article6" alt="@Model?.Value("serviceArticleImage6")">
+                        <p>@Model?.Value("serviceArticleDescription6")</p>
+                    </article>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="about-contact-us" class="about-contact-us">
+    <div class="container">
+        <div class="background-image">
+            <img class="background" src="@BackgroundImage" alt="@Model?.Value("servicesBackgroundImage")">
+            <img class="team-member" src="@TeamMemberImage" alt="@Model?.Value("servicesTeamMemberImage")">
+        </div>
+        <div class="about-information-contact">
+            <h2>@Model?.Value("contactInfoHeadline")</h2>
+            <div class="info">
+                <p class="office"><i class="fa-solid fa-location-dot"></i>Office location</p>
+                <p class="office-info">@Model?.Value("contactInfoOfficeLocation")</p>
+            </div>
+            <div class="info">
+                <p class="office"><i class="fa-solid fa-phone-flip"></i>Phone number</p>
+                <p class="office-info">@Model?.Value("contactInfoPhoneNumber")</p>
+            </div>
+            <div class="info">
+                <p class="office"><i class="fa-regular fa-envelope"></i>E-mail address</p>
+                <p class="office-info">@Model?.Value("contactInfoEmail")</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="about-contact-us" class="about-contact-us">
+    <div class="container">
+        <div class="background-image">
+            <img class="background" src="@BackgroundImage" alt="@Model?.Value("servicesBackgroundImage")">
+            <img class="team-member" src="@TeamMemberImage" alt="@Model?.Value("servicesTeamMemberImage")">
+        </div>
+        <div class="about-information-contact">
+            <h2>@Model?.Value("contactInfoHeadline")</h2>
+            <div class="info">
+                <p class="office"><i class="fa-solid fa-location-dot"></i>Office location</p>
+                <p class="office-info">@Model?.Value("contactInfoOfficeLocation")</p>
+            </div>
+            <div class="info">
+                <p class="office"><i class="fa-solid fa-phone-flip"></i>Phone number</p>
+                <p class="office-info">@Model?.Value("contactInfoPhoneNumber")</p>
+            </div>
+            <div class="info">
+                <p class="office"><i class="fa-regular fa-envelope"></i>E-mail address</p>
+                <p class="office-info">@Model?.Value("contactInfoEmail")</p>
+            </div>
+        </div>
+    </div>
+</section>

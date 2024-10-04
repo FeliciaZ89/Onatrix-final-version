@@ -1,0 +1,243 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = "mainLayout.cshtml";
+ ViewBag.Title=@Model?.Value("pageTitle") ?? null;
+
+    var backgroundImage = Model?.Value<IPublishedContent>("heroBackgroundImage")?.Url() ?? "";
+    var signatureImage = Model?.Value<IPublishedContent>("aboutSignatureImage")?.Url() ?? "";
+    var ArticleOne = Model?.Value<IPublishedContent>("servicesArticleImage1")?.Url() ?? "";
+    var ArticleTwo = Model?.Value<IPublishedContent>("servicesArticleImage2")?.Url() ?? "";
+    var ArticleThree = Model?.Value<IPublishedContent>("servicesArticleImage3")?.Url() ?? "";
+    var ArticleFour = Model?.Value<IPublishedContent>("servicesArticleImage4")?.Url() ?? "";
+    var ArticleFive = Model?.Value<IPublishedContent>("servicesArticleImage5")?.Url() ?? "";
+    var ArticleSix = Model?.Value<IPublishedContent>("servicesArticleImage6")?.Url() ?? "";
+    var trustImage = Model?.Value<IPublishedContent>("trustUsBackgroundImage")?.Url() ?? "";
+    var successImage = Model?.Value<IPublishedContent>("successBackgroundImage")?.Url() ?? "";
+    var secondImage = Model?.Value<IPublishedContent>("successSecondaryImage")?.Url() ?? "";
+    var project1 = Model?.Value<IPublishedContent>("projectsFirstImage")?.Url() ?? "";
+    var project2 = Model?.Value<IPublishedContent>("projectsSecondImage")?.Url() ?? "";
+    var project3 = Model?.Value<IPublishedContent>("projectsThirdImage")?.Url() ?? "";
+    var project4 = Model?.Value<IPublishedContent>("projectsFourthImage")?.Url() ?? "";
+    var partner1 = Model?.Value<IPublishedContent>("partnersImage1")?.Url() ?? "";
+    var partner2 = Model?.Value<IPublishedContent>("partnersImage2")?.Url() ?? "";
+    var partner3 = Model?.Value<IPublishedContent>("partnersImage3")?.Url() ?? "";
+    var partner4 = Model?.Value<IPublishedContent>("partnersImage4")?.Url() ?? "";
+    var partner5 = Model?.Value<IPublishedContent>("partnersImage5")?.Url() ?? "";
+    var partner6 = Model?.Value<IPublishedContent>("partnersImage6")?.Url() ?? "";
+}
+
+<section id ="hero-slider" class="hero">
+	<div class="background" style="background-image: url(@backgroundImage); background-size: cover; background-position:60%"></div>
+	<div class="container">
+		<div class="hero-content">
+			<h1 class="headline">@Model?.Value("heroHeadline")</h1>
+			<p class="ingress">@Model?.Value("heroText")</p>
+			<div>
+			<a href="@Model?.Value("heroButtonUrl")" class="btn btn-primary">@Model?.Value("heroButtonText")</a>
+			</div>
+		</div>
+	</div>
+</section>
+<section id="about-us" class="about-us">
+    <div class="container">
+        <div class="content">
+            <div class="headline">
+                <h5>@Model?.Value("aboutSectionTitle")</h5>
+                <h2>@Model?.Value("aboutHeadline")</h2>
+            </div>
+            <blockquote class="quote">@Model?.Value("aboutQuote")</blockquote>
+            <p>@Model?.Value("aboutText")</p>
+            <div class="signature-container">
+                <div class="signature">
+                    <img class="signature-image" src="@signatureImage" alt="@Model?.Value("aboutSignature")">
+                    <div class="clarification">
+                        <p class="name">@Model?.Value("aboutSignature")</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="contact-form">
+            <div class="form-title">
+                <h3>Request a call back</h3>
+            </div>
+            <div class="form-about-us">
+                <p>Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat</p>
+                <div class="form-request">
+                    <form>
+                        <input type="text" placeholder="Name" name="name" />
+                        <input type="text" placeholder="Phone" name="phone" />
+                        <input type="text" placeholder="Email Address" name="email" />
+                        <div class="input-with-icon">
+                            <input type="text" placeholder="Financial consulting" name="menu" />
+                            <i class="fa-solid fa-caret-down"></i>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="submit-contact">
+                <button>Submit</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="our-services" class="our-services">
+    <div class="container">
+        <div class="content">
+            <div class="services-headline">
+                <h5>@Model?.Value("servicesSectionTitle")</h5>
+                <h2>@Model?.Value("servicesHeadline")</h2>
+            </div>
+            <div class="services-articles">
+                <a href="/details" style="text-decoration: none; color: inherit;">
+                    <article>
+                        <h5>@Model?.Value("servicesArticleTitle1")</h5>
+                        <img class="article-images" src="@ArticleOne" alt="@Model?.Value("servicesArticleImage1")">
+                        <p>@Model?.Value("servicesArticleDescription1")</p>
+                    </article>
+                </a>
+                <a href="/details" style="text-decoration: none; color: inherit;">
+                    <article>
+                        <h5>@Model?.Value("servicesArticleTitle2")</h5>
+                        <img class="article-images" src="@ArticleTwo" alt="@Model?.Value("servicesArticleImage2")">
+                        <p>@Model?.Value("servicesArticleDescription2")</p>
+                    </article>
+                </a>
+                <a href="/details" style="text-decoration: none; color: inherit;">
+                    <article>
+                        <h5>@Model?.Value("servicesArticleTitle3")</h5>
+                        <img class="article-images" src="@ArticleThree" alt="@Model?.Value("servicesArticleImage3")">
+                        <p>@Model?.Value("servicesArticleDescription3")</p>
+                    </article>
+                </a>
+                <a href="/details" style="text-decoration: none; color: inherit;">
+                    <article>
+                        <h5>@Model?.Value("servicesArticleTitle4")</h5>
+                        <img class="article-images" src="@ArticleFour" alt="@Model?.Value("servicesArticleImage4")">
+                        <p>@Model?.Value("servicesArticleDescription4")</p>
+                    </article>
+                </a>
+                <a href="/details" style="text-decoration: none; color: inherit;">
+                    <article>
+                        <h5>@Model?.Value("servicesArticleTitle5")</h5>
+                        <img class="article-images" src="@ArticleFive" alt="@Model?.Value("servicesArticleImage5")">
+                        <p>@Model?.Value("servicesArticleDescription5")</p>
+                    </article>
+                </a>
+                <a href="/details" style="text-decoration: none; color: inherit;">
+                    <article>
+                        <h5>@Model?.Value("servicesArticleTitle6")</h5>
+                        <img class="article-images" src="@ArticleSix" alt="@Model?.Value("servicesArticleImage6")">
+                        <p>@Model?.Value("servicesArticleDescription6")</p>
+                    </article>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="trust-us" class="trust-us">
+    <div class="container">
+        <div class="background-image" style="background-image: url('@trustImage');"></div>
+        <div class="title">
+            <h2 class="headline">@Model?.Value("trustUsHeadline")</h2>
+            <h2 class="customers">@Model?.Value("trustUsCustomers")</h2>
+            <p>@Model?.Value("trustUsDescription")</p>
+            <a href="@Model?.Value("trustUsButtonUrl")" class="btn btn-primary">@Model?.Value("trustUsButtonText")</a>
+        </div>
+    </div>
+</section>
+
+<section id="success-stories" class="success-stories">
+    <div class="background" style="background-image: url('@successImage');"></div>
+    <div class="container">
+        <div class="title">
+            <h5>@Model?.Value("successPageTitle")</h5>
+            <h2>@Model?.Value("successHeadline")</h2>
+        </div>
+        <div class="numbers">
+            <div class="one">
+                <h3 class="story">@Model?.Value("successCustomerNumbers")</h3>
+                <p>@Model?.Value("successCustomerDescription")</p>
+            </div>
+            <div class="one">
+                <h3 class="story">@Model?.Value("successProjectNumbers")</h3>
+                <p>@Model?.Value("successProjectDescription")</p>
+            </div>
+            <div class="one">
+                <h3 class="story">@Model?.Value("successBranchNumbers")</h3>
+                <p>@Model?.Value("successBranchDescription")</p>
+            </div>
+        </div>
+        <img class="secondary-img" src="@secondImage" alt="@Model?.Value("successSecondaryImage")">
+    </div>
+</section>
+
+<section id="our-projects" class="our-projects">
+    <div class="container">
+        <h5>@Model?.Value("projectsSectionTitle")</h5>
+        <h2>@Model?.Value("projectsHeadline")</h2>
+    </div>
+    <div class="articles">
+        <div class="project">
+            <img class="image" src="@project1" alt="@Model?.Value("projectsFirstImage")">
+            <article>
+                <div class="description">
+                    <h6>@Model?.Value("projectsFirstProjectTitle")</h6>
+                    <p>@Model?.Value("projectsFirstProjectDesription")</p>
+                </div>
+                <div class="url">
+                    <a href="@Model?.Value("projectsFirstProjectUrl")"><i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </article>
+        </div>
+        <div class="project">
+            <img class="image" src="@project2" alt="@Model?.Value("projectsSecondImage")">
+            <article>
+                <div class="description">
+                    <h6>@Model?.Value("projectsSecondProjectTitle")</h6>
+                    <p>@Model?.Value("projectsSecondProjectDescription")</p>
+                </div>
+                <div class="url">
+                    <a href="@Model?.Value("projectsSecondProjectUrl")"><i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </article>
+        </div>
+        <div class="project">
+            <img class="image" src="@project3" alt="@Model?.Value("projectsProjectThirdImage")">
+            <article>
+                <div class="description">
+                    <h6>@Model?.Value("projectsThirdProjectTitle")</h6>
+                    <p>@Model?.Value("projectsThirdProjectDescription")</p>
+                </div>
+                <div class="url">
+                    <a href="@Model?.Value("projectsThirdProjectUrl")"><i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </article>
+        </div>
+        <div class="project">
+            <img class="image" src="@project4" alt="@Model?.Value("projectsFourthImage")">
+            <article>
+                <div class="description">
+                    <h6>@Model?.Value("projectsFourthProjectTitle")</h6>
+                    <p>@Model?.Value("projectsFourthProjectDescription")</p>
+                </div>
+                <div class="url">
+                    <a href="@Model?.Value("projectsFourthProjectUrl")"><i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section id="partners" class="partners">
+    <div class="container">
+        <img class="partner-image" src="@partner1">
+        <img class="partner-image" src="@partner2">
+        <img class="partner-image" src="@partner3">
+        <img class="partner-image" src="@partner4">
+        <img class="partner-image" src="@partner5">
+        <img class="partner-image" src="@partner6">
+    </div>
+</section>
