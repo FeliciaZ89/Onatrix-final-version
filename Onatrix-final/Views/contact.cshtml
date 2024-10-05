@@ -3,7 +3,7 @@
 @{
 	Layout = "mainLayout.cshtml";
 
-	ViewBag.Title = Model?.Value("contactsPageTitle") ?? null;
+	ViewBag.Title = Model?.Value("pageTitle") ?? null;
 
     var leftImage = Model?.Value<IPublishedContent>("contactsLeftImage")?.Url() ?? "";
     var rightImage = Model?.Value<IPublishedContent>("contactsRightImage")?.Url() ?? "";
@@ -26,7 +26,7 @@
 
 }
 <section id="about" class="about">
-    <img class="left-image" src="@leftImage" alt="@Model?.Value("contactsLeftImage")">
+    <img class="left-image" src="@leftImage" alt="image">
     <div class="container">
         <div class="about-title">
             <h1>@Model?.Value("contactsTitle")</h1>
@@ -37,14 +37,14 @@
             </div>
         </div>
     </div>
-    <img class="right-image" src="@rightImage" alt="@Model?.Value("contactsRightImage")">
+    <img class="right-image" src="@rightImage" alt="image">
 </section>
 
 <section id="about-contact-us" class="about-contact-us">
     <div class="container">
         <div class="background-image">
-            <img class="background" src="@BackgroundImage" alt="@Model?.Value("contactsBackgroundImage")">
-            <img class="team-member" src="@TeamMemberImage" alt="@Model?.Value("contactsTeamMemberImage")">
+            <img class="background" src="@BackgroundImage" alt="">
+            <img class="team-member" src="@TeamMemberImage" alt="">
         </div>
         <div class="about-information-contact">
             <h2>@Model?.Value("contactsInfoHeadline")</h2>
@@ -65,7 +65,7 @@
 </section>
 
 <section id="map" class="map">
-    <img class="background-img" src="@BackgroundMapImage" alt="@Model?.Value("contactsMapImage")">
+    <img class="background-img" src="@BackgroundMapImage" alt="image map">
     <div class="container">
         <div class="formular">
             <h5>@Model?.Value("contactsFormTitle")</h5>
@@ -95,11 +95,11 @@
 
 <section id="partners" class="partners">
     <div class="container">
-        <img class="partner-image" src="@One">
-        <img class="partner-image" src="@Two">
-        <img class="partner-image" src="@Three">
-        <img class="partner-image" src="@Four">
-        <img class="partner-image" src="@Five">
-        <img class="partner-image" src="@Six">
+        <img class="partner-image" src="@One" alt="logo">
+        <img class="partner-image" src="@Two" alt="logo">
+        <img class="partner-image" src="@Three" alt="logo">
+        <img class="partner-image" src="@Four" alt="logo">
+        <img class="partner-image" src="@Five" alt="logo">
+        <img class="partner-image" src="@Six" alt="logo">
     </div>
 </section>

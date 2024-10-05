@@ -2,33 +2,70 @@
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 @{
 	Layout = "mainLayout.cshtml";
- ViewBag.Title=@Model?.Value("pageTitle") ?? null;
+    ViewBag.Title=@Model?.Value("pageTitle") ?? null;
 
-    var backgroundImage = Model?.Value<IPublishedContent>("heroBackgroundImage")?.Url() ?? "";
-    var signatureImage = Model?.Value<IPublishedContent>("aboutSignatureImage")?.Url() ?? "";
-    var ArticleOne = Model?.Value<IPublishedContent>("servicesArticleImage1")?.Url() ?? "";
-    var ArticleTwo = Model?.Value<IPublishedContent>("servicesArticleImage2")?.Url() ?? "";
-    var ArticleThree = Model?.Value<IPublishedContent>("servicesArticleImage3")?.Url() ?? "";
-    var ArticleFour = Model?.Value<IPublishedContent>("servicesArticleImage4")?.Url() ?? "";
-    var ArticleFive = Model?.Value<IPublishedContent>("servicesArticleImage5")?.Url() ?? "";
-    var ArticleSix = Model?.Value<IPublishedContent>("servicesArticleImage6")?.Url() ?? "";
-    var trustImage = Model?.Value<IPublishedContent>("trustUsBackgroundImage")?.Url() ?? "";
-    var successImage = Model?.Value<IPublishedContent>("successBackgroundImage")?.Url() ?? "";
-    var secondImage = Model?.Value<IPublishedContent>("successSecondaryImage")?.Url() ?? "";
-    var project1 = Model?.Value<IPublishedContent>("projectsFirstImage")?.Url() ?? "";
-    var project2 = Model?.Value<IPublishedContent>("projectsSecondImage")?.Url() ?? "";
-    var project3 = Model?.Value<IPublishedContent>("projectsThirdImage")?.Url() ?? "";
-    var project4 = Model?.Value<IPublishedContent>("projectsFourthImage")?.Url() ?? "";
-    var partner1 = Model?.Value<IPublishedContent>("partnersImage1")?.Url() ?? "";
-    var partner2 = Model?.Value<IPublishedContent>("partnersImage2")?.Url() ?? "";
-    var partner3 = Model?.Value<IPublishedContent>("partnersImage3")?.Url() ?? "";
-    var partner4 = Model?.Value<IPublishedContent>("partnersImage4")?.Url() ?? "";
-    var partner5 = Model?.Value<IPublishedContent>("partnersImage5")?.Url() ?? "";
-    var partner6 = Model?.Value<IPublishedContent>("partnersImage6")?.Url() ?? "";
+
+    var imageProperties = new[]
+    {
+        "heroBackgroundImage",
+        "aboutSignatureImage",
+        "servicesArticleImage1",
+        "servicesArticleImage2",
+        "servicesArticleImage3",
+        "servicesArticleImage4",
+        "servicesArticleImage5",
+        "servicesArticleImage6",
+        "trustUsBackgroundImage",
+        "successBackgroundImage",
+        "successSecondaryImage",
+        "projectsFirstImage",
+        "projectsSecondImage",
+        "projectsThirdImage",
+        "projectsFourthImage",
+        "partnersImage1",
+        "partnersImage2",
+        "partnersImage3",
+        "partnersImage4",
+        "partnersImage5",
+        "partnersImage6"
+    };
+
+    var images = new Dictionary<string, string>();
+    foreach (var prop in imageProperties)
+    {
+        images[prop] = Model?.Value<IPublishedContent>(prop)?.Url() ?? "";
+    }
 }
 
+   @*  // var backgroundImage = Model?.Value<IPublishedContent>("heroBackgroundImage")?.Url() ?? "";
+    // var signatureImage = Model?.Value<IPublishedContent>("aboutSignatureImage")?.Url() ?? "";
+    // var ArticleOne = Model?.Value<IPublishedContent>("servicesArticleImage1")?.Url() ?? "";
+    // var ArticleTwo = Model?.Value<IPublishedContent>("servicesArticleImage2")?.Url() ?? "";
+    // var ArticleThree = Model?.Value<IPublishedContent>("servicesArticleImage3")?.Url() ?? "";
+    // var ArticleFour = Model?.Value<IPublishedContent>("servicesArticleImage4")?.Url() ?? "";
+    // var ArticleFive = Model?.Value<IPublishedContent>("servicesArticleImage5")?.Url() ?? "";
+    // var ArticleSix = Model?.Value<IPublishedContent>("servicesArticleImage6")?.Url() ?? "";
+    // var trustImage = Model?.Value<IPublishedContent>("trustUsBackgroundImage")?.Url() ?? "";
+    // var successImage = Model?.Value<IPublishedContent>("successBackgroundImage")?.Url() ?? "";
+    // var secondImage = Model?.Value<IPublishedContent>("successSecondaryImage")?.Url() ?? "";
+    // var project1 = Model?.Value<IPublishedContent>("projectsFirstImage")?.Url() ?? "";
+    // var project2 = Model?.Value<IPublishedContent>("projectsSecondImage")?.Url() ?? "";
+    // var project3 = Model?.Value<IPublishedContent>("projectsThirdImage")?.Url() ?? "";
+    // var project4 = Model?.Value<IPublishedContent>("projectsFourthImage")?.Url() ?? "";
+    // var partnera = Model?.Value<IPublishedContent>("partnersImage1")?.Url() ?? "";
+    // var partnerb = Model?.Value<IPublishedContent>("partnersImage2")?.Url() ?? "";
+    // var partnerc = Model?.Value<IPublishedContent>("partnersImage3")?.Url() ?? "";
+    // var partnerd = Model?.Value<IPublishedContent>("partnersImage4")?.Url() ?? "";
+    // var partnere = Model?.Value<IPublishedContent>("partnersImage5")?.Url() ?? "";
+    // var partnerf = Model?.Value<IPublishedContent>("partnersImage6")?.Url() ?? "";
+
+} *@
+
 <section id ="hero-slider" class="hero">
-	<div class="background" style="background-image: url(@backgroundImage); background-size: cover; background-position:60%"></div>
+   @*  <div class="background" style="background-image: url(@backgroundImage); background-size: cover; background-position:60%"></div> *@
+  <div class="background">
+    <img src="@images["heroBackgroundImage"]" style:"background-image; background-size: cover; background-position:60%" alt="Hero Background" />
+    </div>
 	<div class="container">
 		<div class="hero-content">
 			<h1 class="headline">@Model?.Value("heroHeadline")</h1>
@@ -39,6 +76,7 @@
 		</div>
 	</div>
 </section>
+
 <section id="about-us" class="about-us">
     <div class="container">
         <div class="content">
@@ -50,7 +88,8 @@
             <p>@Model?.Value("aboutText")</p>
             <div class="signature-container">
                 <div class="signature">
-                    <img class="signature-image" src="@signatureImage" alt="@Model?.Value("aboutSignature")">
+                   @*  <img class="signature-image" src="@signatureImage" alt="signature image"> *@
+                    <img class="signature-image" src="@images["aboutSignatureImage"]" alt="Signature Image" />
                     <div class="clarification">
                         <p class="name">@Model?.Value("aboutSignature")</p>
                     </div>
@@ -81,8 +120,7 @@
         </div>
     </div>
 </section>
-
-<section id="our-services" class="our-services">
+ <section id="services" class="services">
     <div class="container">
         <div class="content">
             <div class="services-headline">
@@ -90,102 +128,120 @@
                 <h2>@Model?.Value("servicesHeadline")</h2>
             </div>
             <div class="services-articles">
-                <a href="/details" style="text-decoration: none; color: inherit;">
+                <a href="/servicedetails" style="text-decoration: none; color: inherit;">
                     <article>
                         <h5>@Model?.Value("servicesArticleTitle1")</h5>
-                        <img class="article-images" src="@ArticleOne" alt="@Model?.Value("servicesArticleImage1")">
+                       @*  <img class="article-images" src="@ArticleOne" alt="article image"> *@
+                        <img class="article-images" src="@images["servicesArticleImage1"]" alt="Service Article 1" />
                         <p>@Model?.Value("servicesArticleDescription1")</p>
                     </article>
                 </a>
-                <a href="/details" style="text-decoration: none; color: inherit;">
+                <a href="/servicedetails" style="text-decoration: none; color: inherit;">
                     <article>
                         <h5>@Model?.Value("servicesArticleTitle2")</h5>
-                        <img class="article-images" src="@ArticleTwo" alt="@Model?.Value("servicesArticleImage2")">
+                      @*   <img class="article-images" src="@ArticleTwo" alt="article image" > *@
+                        <img class="article-images" src="@images["servicesArticleImage2"]" alt="Service Article 2" />
                         <p>@Model?.Value("servicesArticleDescription2")</p>
                     </article>
                 </a>
-                <a href="/details" style="text-decoration: none; color: inherit;">
+                <a href="/servicedetails" style="text-decoration: none; color: inherit;">
                     <article>
                         <h5>@Model?.Value("servicesArticleTitle3")</h5>
-                        <img class="article-images" src="@ArticleThree" alt="@Model?.Value("servicesArticleImage3")">
+                      @*   <img class="article-images" src="@ArticleThree" alt="article image"> *@
+                        <img class="article-images" src="@images["servicesArticleImage3"]" alt="Service Article 3" />
                         <p>@Model?.Value("servicesArticleDescription3")</p>
                     </article>
                 </a>
-                <a href="/details" style="text-decoration: none; color: inherit;">
+                <a href="/servicedetails" style="text-decoration: none; color: inherit;">
                     <article>
                         <h5>@Model?.Value("servicesArticleTitle4")</h5>
-                        <img class="article-images" src="@ArticleFour" alt="@Model?.Value("servicesArticleImage4")">
+                        @* <img class="article-images" src="@ArticleFour" alt="article image" > *@
+                        <img class="article-images" src="@images["servicesArticleImage4"]" alt="Service Article 4" />
                         <p>@Model?.Value("servicesArticleDescription4")</p>
                     </article>
                 </a>
-                <a href="/details" style="text-decoration: none; color: inherit;">
+                <a href="/servicedetails" style="text-decoration: none; color: inherit;">
                     <article>
                         <h5>@Model?.Value("servicesArticleTitle5")</h5>
-                        <img class="article-images" src="@ArticleFive" alt="@Model?.Value("servicesArticleImage5")">
+                        @* <img class="article-images" src="@ArticleFive" alt="article image"> *@
+                        <img class="article-images" src="@images["servicesArticleImage5"]" alt="Service Article 5" />
                         <p>@Model?.Value("servicesArticleDescription5")</p>
                     </article>
                 </a>
-                <a href="/details" style="text-decoration: none; color: inherit;">
+                <a href="/servicedetails" style="text-decoration: none; color: inherit;">
                     <article>
                         <h5>@Model?.Value("servicesArticleTitle6")</h5>
-                        <img class="article-images" src="@ArticleSix" alt="@Model?.Value("servicesArticleImage6")">
+                       @*  <img class="article-images" src="@ArticleSix" alt="image article"> *@
+                        <img class="article-images" src="@images["servicesArticleImage6"]" alt="Service Article 6" />
                         <p>@Model?.Value("servicesArticleDescription6")</p>
                     </article>
                 </a>
             </div>
         </div>
     </div>
-</section>
+</section> 
 
 <section id="trust-us" class="trust-us">
     <div class="container">
-        <div class="background-image" style="background-image: url('@trustImage');"></div>
+        @* <div class="background-image" style="background-image: url('@(trustImage)');"></div> *@
+        
+
         <div class="title">
             <h2 class="headline">@Model?.Value("trustUsHeadline")</h2>
             <h2 class="customers">@Model?.Value("trustUsCustomers")</h2>
             <p>@Model?.Value("trustUsDescription")</p>
             <a href="@Model?.Value("trustUsButtonUrl")" class="btn btn-primary">@Model?.Value("trustUsButtonText")</a>
         </div>
+        <img class="background-image" src="@images["trustUsBackgroundImage"]" alt="Trust Us Background" />
     </div>
 </section>
 
 <section id="success-stories" class="success-stories">
-    <div class="background" style="background-image: url('@successImage');"></div>
+    <!-- Uncomment if you want to use it as a background -->
+    <div class="background" style="background-image: url('@images["successBackgroundImage"]');"></div> 
+
+    <img class="secondary-img" src="@images["successSecondaryImage"]" alt="Success Secondary Image" />
+
     <div class="container">
-        <div class="title">
+        <div class="headline">
             <h5>@Model?.Value("successPageTitle")</h5>
             <h2>@Model?.Value("successHeadline")</h2>
         </div>
-        <div class="numbers">
-            <div class="one">
-                <h3 class="story">@Model?.Value("successCustomerNumbers")</h3>
+
+        <div class="content">
+            <div class="count-text">
+                <h3 class="count">@Model?.Value("successCustomerNumbers")</h3>
                 <p>@Model?.Value("successCustomerDescription")</p>
             </div>
-            <div class="one">
-                <h3 class="story">@Model?.Value("successProjectNumbers")</h3>
+            <div class="count-text">
+                <h3 class="count">@Model?.Value("successProjectNumbers")</h3>
                 <p>@Model?.Value("successProjectDescription")</p>
             </div>
-            <div class="one">
-                <h3 class="story">@Model?.Value("successBranchNumbers")</h3>
+            <div class="count-text">
+                <h3 class="count">@Model?.Value("successBranchNumbers")</h3>
                 <p>@Model?.Value("successBranchDescription")</p>
             </div>
         </div>
-        <img class="secondary-img" src="@secondImage" alt="@Model?.Value("successSecondaryImage")">
+
+        <img class="background" src="@images["successBackgroundImage"]" alt="Success Background" />
     </div>
 </section>
 
+
+
 <section id="our-projects" class="our-projects">
-    <div class="container">
+
         <h5>@Model?.Value("projectsSectionTitle")</h5>
         <h2>@Model?.Value("projectsHeadline")</h2>
-    </div>
+   
     <div class="articles">
         <div class="project">
-            <img class="image" src="@project1" alt="@Model?.Value("projectsFirstImage")">
+           @*  <img class="image" src="@project1" alt="project image"> *@
+            <img class="image" src="@images["projectsFirstImage"]" alt="First Project Image" />
             <article>
                 <div class="description">
                     <h6>@Model?.Value("projectsFirstProjectTitle")</h6>
-                    <p>@Model?.Value("projectsFirstProjectDesription")</p>
+                    <p>@Model?.Value("projectsFirstProjectDescription")</p>
                 </div>
                 <div class="url">
                     <a href="@Model?.Value("projectsFirstProjectUrl")"><i class="fa-solid fa-arrow-right"></i></a>
@@ -193,7 +249,8 @@
             </article>
         </div>
         <div class="project">
-            <img class="image" src="@project2" alt="@Model?.Value("projectsSecondImage")">
+            @* <img class="image" src="@project2" alt="project image"> *@
+            <img class="image" src="@images["projectsSecondImage"]" alt="Second Project Image" />
             <article>
                 <div class="description">
                     <h6>@Model?.Value("projectsSecondProjectTitle")</h6>
@@ -205,7 +262,8 @@
             </article>
         </div>
         <div class="project">
-            <img class="image" src="@project3" alt="@Model?.Value("projectsProjectThirdImage")">
+            @* <img class="image" src="@project3" alt="project image"> *@
+            <img class="image" src="@images["projectsThirdImage"]" alt="Third Project Image" />
             <article>
                 <div class="description">
                     <h6>@Model?.Value("projectsThirdProjectTitle")</h6>
@@ -217,7 +275,9 @@
             </article>
         </div>
         <div class="project">
-            <img class="image" src="@project4" alt="@Model?.Value("projectsFourthImage")">
+            @* <img class="image" src="@project4" alt="project image"> *@
+            <img class="image" src="@images["projectsFourthImage"]" alt="Fourth Project Image" />
+
             <article>
                 <div class="description">
                     <h6>@Model?.Value("projectsFourthProjectTitle")</h6>
@@ -233,11 +293,17 @@
 
 <section id="partners" class="partners">
     <div class="container">
-        <img class="partner-image" src="@partner1">
-        <img class="partner-image" src="@partner2">
-        <img class="partner-image" src="@partner3">
-        <img class="partner-image" src="@partner4">
-        <img class="partner-image" src="@partner5">
-        <img class="partner-image" src="@partner6">
+        <img class="partner-image" src="@images["partnersImage1"]" alt="Partner 1" />
+        <img class="partner-image" src="@images["partnersImage2"]" alt="Partner 2" />
+        <img class="partner-image" src="@images["partnersImage3"]" alt="Partner 3" />
+        <img class="partner-image" src="@images["partnersImage4"]" alt="Partner 4" />
+        <img class="partner-image" src="@images["partnersImage5"]" alt="Partner 5" />
+        <img class="partner-image" src="@images["partnersImage6"]" alt="Partner 6" />
+       @*  <img class="partner-image" src="@partnera">
+        <img class="partner-image" src="@partnerb">
+        <img class="partner-image" src="@partnerc">
+        <img class="partner-image" src="@partnerd">
+        <img class="partner-image" src="@partnere">
+        <img class="partner-image" src="@partnerf"> *@
     </div>
-</section>
+</section> 

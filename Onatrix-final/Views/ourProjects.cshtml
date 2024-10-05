@@ -11,10 +11,10 @@
     var rightImage = Model?.Value<IPublishedContent>("projectsRightImage")?.Url() ?? "";
     var BackgroundImage = Model?.Value<IPublishedContent>("projectsBackgroundImage")?.Url() ?? "";
     var TeamMemberImage = Model?.Value<IPublishedContent>("projectsTeamMemberImage")?.Url() ?? "";
-    var project1 = Model?.Value<IPublishedContent>("projectImg1")?.Url() ?? "";
-    var project2 = Model?.Value<IPublishedContent>("projectImg2")?.Url() ?? "";
-    var project3 = Model?.Value<IPublishedContent>("projectImg3")?.Url() ?? "";
-    var project4 = Model?.Value<IPublishedContent>("projectImg4")?.Url() ?? "";
+    var project1 = Model?.Value<IPublishedContent>("projectImage1")?.Url() ?? "";
+    var project2 = Model?.Value<IPublishedContent>("projectImage2")?.Url() ?? "";
+    var project3 = Model?.Value<IPublishedContent>("projectImage3")?.Url() ?? "";
+    var project4 = Model?.Value<IPublishedContent>("projectImage4")?.Url() ?? "";
 }
 
 
@@ -26,7 +26,7 @@
         <div class="about-title">
             <h1>@Model?.Value("projectsTitle")</h1>
             <div class="about-directions">
-                <a href="@Model?.Value("servicesHomeUrl")"> @Model?.Value("projectsHomePageName") </a>
+                <a href="@Model?.Value("projectsHomeUrl")"> @Model?.Value("projectsHomePageName") </a>
                 <i class="fa-solid fa-arrow-right"></i>
                 <p>@Model?.Value("projectsThisPageName")</p>
             </div>
@@ -41,7 +41,7 @@
             <div class="content">
                 <div class="articles">
                     <div class="image">
-                        <img class="images" src="@project1" alt="@Model?.Value("projectImg1")">
+                        <img class="images" src="@project1" alt="@Model?.Value("projectImage1")">
                     </div>
                     <div class="articles">
                         <h4>@Model?.Value("projectTitle1")</h4>
@@ -52,7 +52,7 @@
                 </div>
                 <div class="articles">
                     <div class="image">
-                        <img class="images" src="@project2" alt="@Model?.Value("projectImg2")">
+                        <img class="images" src="@project2" alt="@Model?.Value("projectImage2")">
                     </div>
                     <div class="articles">
                         <h4>@Model?.Value("projectTitle2")</h4>
@@ -63,7 +63,7 @@
                 </div>
                 <div class="articles">
                     <div class="image">
-                        <img class="images" src="@project3" alt="@Model?.Value("projectImg3")">
+                        <img class="images" src="@project3" alt="@Model?.Value("projectImage3")">
                     </div>
                     <div class="articles">
                         <h4>@Model?.Value("projectTitle3")</h4>
@@ -74,7 +74,7 @@
                 </div>
                 <div class="articles">
                     <div class="image">
-                        <img class="images" src="@project4" alt="@Model?.Value("projectImg4")">
+                        <img class="images" src="@project4" alt="@Model?.Value("projectImage4")">
                     </div>
                     <div class="articles">
                         <h4>@Model?.Value("projectTitle4")</h4>

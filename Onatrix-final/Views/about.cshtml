@@ -2,7 +2,7 @@
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 @{
 	Layout = "mainLayout.cshtml";
-	ViewBag.Title = Model?.Value("aboutPageTitle") ?? null;
+	ViewBag.Title = Model?.Value("pageTitle") ?? null;
 
     var leftImage = Model?.Value<IPublishedContent>("aboutLeftImage")?.Url() ?? "";
     var rightImage = Model?.Value<IPublishedContent>("aboutRightImage")?.Url() ?? "";
@@ -20,7 +20,7 @@
 }
 
 <section id="about" class="about">
-    <img class="left-image" src="@leftImage" alt="@Model?.Value("aboutLeftImage")">
+    <img class="left-image" src="@leftImage" alt="">
     <div class="container">
         <div class="about-title">
             <h1>@Model?.Value("aboutTitle")</h1>
@@ -31,13 +31,13 @@
             </div>
         </div>
     </div>
-    <img class="right-image" src="@rightImage" alt="@Model?.Value("aboutRightImage")">
+    <img class="right-image" src="@rightImage" alt="">
 </section>
 
 <section id="about-ceo" class="about-ceo">
     <div class="container">
         <div class="ceo-image">
-            <img class="ceo" src="@aboutCeo" alt="@Model?.Value("aboutCeo")">
+            <img class="ceo" src="@aboutCeo" alt="">
             <p>@Model?.Value("aboutCeoNameAndFunction")</p>
         </div>
         <div class="description">
@@ -72,8 +72,7 @@
             </div>
         </div>
     </div>
-
-    <img class="review-img" src="@reviewRightImage" alt="@Model?.Value("reviewRightImage")">
+    <img class="review-img" src="@reviewRightImage" alt="">
 </section>
 
 <section id="our-experts" class="our-experts">
@@ -85,21 +84,21 @@
         <div class="team">
             <div class="first-experts-team">
                 <article>
-                    <img class="pro-image" src="@expert1" alt="@Model?.Value("expert1")">
+                    <img class="pro-image" src="@expert1" alt="">
                     <div class="pro-text">
                         <h4 class="pro-name">@Model?.Value("expertName1")</h4>
                         <p class="pro-title">@Model?.Value("expertOcupation1")</p>
                     </div>
                 </article>
                 <article>
-                    <img class="pro-image" src="@expert2" alt="@Model?.Value("expert2")">
+                    <img class="pro-image" src="@expert2" alt="">
                     <div class="pro-text">
                         <h4 class="pro-name">@Model?.Value("expertName2")</h4>
                         <p class="pro-title">@Model?.Value("expertOcupation2")</p>
                     </div>
                 </article>
                 <article>
-                    <img class="pro-image" src="@expert3" alt="@Model?.Value("expert3")">
+                    <img class="pro-image" src="@expert3" alt="">
                     <div class="pro-text">
                         <h4 class="pro-name">@Model?.Value("expertName3")</h4>
                         <p class="pro-title">@Model?.Value("expertOcupation3")</p>
@@ -108,28 +107,28 @@
             </div>
             <div class="second-experts-team">
                 <article>
-                    <img class="pro-image" src="@expert4" alt="@Model?.Value("expert4")">
+                    <img class="pro-image" src="@expert4" alt="">
                     <div class="pro-text">
                         <h4 class="pro-name">@Model?.Value("expertName4")</h4>
                         <p class="pro-title">@Model?.Value("expertOcupation4")</p>
                     </div>
                 </article>
                 <article>
-                    <img class="pro-image" src="@expert5" alt="@Model?.Value("expert5")">
+                    <img class="pro-image" src="@expert5" alt="">
                     <div class="pro-text">
                         <h4 class="pro-name">@Model?.Value("expertName5")</h4>
                         <p class="pro-title">@Model?.Value("expertOcupation5")</p>
                     </div>
                 </article>
                 <article>
-                    <img class="pro-image" src="@expert6" alt="@Model?.Value("expert6")">
+                    <img class="pro-image" src="@expert6" alt="">
                     <div class="pro-text">
                         <h4 class="pro-name">@Model?.Value("expertName6")</h4>
                         <p class="pro-title">@Model?.Value("expertOcupation6")</p>
                     </div>
                 </article>
                 <article>
-                    <img class="pro-image" src="@expert7" alt="@Model?.Value("expert7")">
+                    <img class="pro-image" src="@expert7" alt="">
                     <div class="pro-text">
                         <h4 class="pro-name">@Model?.Value("expertName7")</h4>
                         <p class="pro-title">@Model?.Value("expertOcupation7")</p>
@@ -143,21 +142,21 @@
 <section id="about-contact-us" class="about-contact-us">
     <div class="container">
         <div class="background-image">
-            <img class="background" src="@BackgroundImage" alt="@Model?.Value("contactBackgroundImage")">
-            <img class="team-member" src="@TeamMemberImage" alt="@Model?.Value("contactTeamMemberImage")">
+            <img class="background" src="@BackgroundImage" alt="">
+            <img class="team-member" src="@TeamMemberImage" alt="">
         </div>
         <div class="about-information-contact">
             <h2>@Model?.Value("contactInfoHeadline")</h2>
             <div class="info">
-                <p class="office"><i class="fa-solid fa-location-dot"></i>Office location</p>
+                <p class="office"><i class="fa-solid fa-location-dot"></i> Office location</p>
                 <p class="office-info">@Model?.Value("contactInfoOfficeLocation")</p>
             </div>
             <div class="info">
-                <p class="office"><i class="fa-solid fa-phone-flip"></i>Phone number</p>
+                <p class="office"><i class="fa-solid fa-phone-flip"></i> Phone number</p>
                 <p class="office-info">@Model?.Value("contactInfoPhoneNumber")</p>
             </div>
             <div class="info">
-                <p class="office"><i class="fa-regular fa-envelope"></i>E-mail address</p>
+                <p class="office"><i class="fa-regular fa-envelope"></i> E-mail address</p>
                 <p class="office-info">@Model?.Value("contactInfoEmail")</p>
             </div>
         </div>
