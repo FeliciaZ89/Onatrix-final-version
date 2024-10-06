@@ -183,9 +183,6 @@
 
 <section id="trust-us" class="trust-us">
     <div class="container">
-        @* <div class="background-image" style="background-image: url('@(trustImage)');"></div> *@
-        
-
         <div class="title">
             <h2 class="headline">@Model?.Value("trustUsHeadline")</h2>
             <h2 class="customers">@Model?.Value("trustUsCustomers")</h2>
@@ -197,11 +194,7 @@
 </section>
 
 <section id="success-stories" class="success-stories">
-    <!-- Uncomment if you want to use it as a background -->
-    <div class="background" style="background-image: url('@images["successBackgroundImage"]');"></div> 
-
     <img class="secondary-img" src="@images["successSecondaryImage"]" alt="Success Secondary Image" />
-
     <div class="container">
         <div class="headline">
             <h5>@Model?.Value("successPageTitle")</h5>
@@ -222,12 +215,8 @@
                 <p>@Model?.Value("successBranchDescription")</p>
             </div>
         </div>
-
-        <img class="background" src="@images["successBackgroundImage"]" alt="Success Background" />
     </div>
 </section>
-
-
 
 <section id="our-projects" class="our-projects">
 

@@ -1,4 +1,4 @@
-@charset "utf-8";
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 html, body, section, div, header, footer, main, aside, nav, blockquote {
@@ -204,6 +204,8 @@ h2 {
 
             #about-us .container .content p {
                 font-size: 14px;
+                margin-right:100px;
+               
             }
 
         #about-us .container .contact-form {
@@ -423,38 +425,43 @@ h2 {
     padding-top: 110px;
     height: 900px;
 }
-    .background {
+
+    #success-stories .background {
         position: absolute;
-        top: 0; 
+        top: 0;
         left: 0;
         right: 0;
         bottom: 0;
         z-index: 1;
-        width: 100%; 
+        width: 100%;
         height: 100%;
-        object-fit: cover; 
+        object-fit: cover;
     }
 
-    .secondary-img {
-        position: absolute; 
-        bottom: -100px; 
+    #success-stories .secondary-img {
+        position: absolute;
+        bottom: -100px;
         left: 50%;
         transform: translateX(-50%);
-        z-index: 2; 
+        z-index: 2;
     }
 
-    .container {
+    #success-stories .container {
         position: relative;
-        z-index: 2; 
+        z-index: 2;
+        max-width: 1200px; 
+        margin: 0 auto; 
+        padding: 0 20px; 
     }
 
-    .headline {
+    #success-stories .headline {
         padding-bottom: 65px;
         align-items: center;
-        text-align: center; 
+        text-align: center;
         color: white;
+    }
 
-        h5 {
+        #success-stories .headline h5 {
             font-size: 14px;
             color: #D9C3A9;
             font-weight: 700;
@@ -462,39 +469,51 @@ h2 {
             margin: 0;
         }
 
-        h2 {
+        #success-stories .headline h2 {
             color: white;
             padding: 0;
             margin: 0;
             font-size: 40px;
         }
-    }
 
-    .content {
+    #success-stories .content {
         display: flex;
-        justify-content: space-between; 
-        align-items: center;
+        justify-content: space-between;
+        align-items: flex-start; 
         text-align: center;
+        margin-top: 40px; 
     }
 
-    .count-text {
-        width: 370px; 
+    #success-stories .count-text {
+        width: 370px;
     }
 
-    .count {
-        padding: 0;
-        margin: 0;
-        font-size: 100px;
-        color: #D9C3A9;
-    }
+        #success-stories .count-text h3 {
+            padding: 0;
+            margin: 0;
+            font-size: 100px;
+            color: #D9C3A9;
+        }
 
-    p {
-        padding: 0;
-        margin: 0;
-        font-size: 18px;
-        color: white;
-    }
+        #success-stories .count-text p {
+            padding: 0;
+            margin: 0;
+            font-size: 18px;
+            color: white; 
+        }
 
+    
+    #success-stories img.background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 
 
 
@@ -553,25 +572,26 @@ h2 {
                     font-size: 18px;
                     padding: 0;
                     margin: 0;
-                    transition: color 0.3s ease;
+                   
                 }
 
                 #our-projects .articles .project article .description p {
                     font-size: 14px;
                     padding: 0;
                     margin: 0;
-                    transition: color 0.3s ease;
+                  
                 }
 
-    #our-projects .our-projects .articles .project article .url a {
-        color: white;
-        font-size: 40px;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-        pointer-events: none;
+    #our-projects .articles .project article .url i {
+    
+      color:white;
+      text-decoration:none;
+      font-size:2rem;
+     fina
+       
     }
 
-.about {
+#about {
     position: relative;
     overflow: hidden;
     background-color: rgba(247, 247, 247, 1);
@@ -579,19 +599,19 @@ h2 {
     padding-top: 60px;
 }
 
-.left-image {
+#about .left-image {
     position: absolute;
     bottom: 80px;
     left: 900px;
     z-index: 1;
 }
 
-.about .container {
+#about .container {
     position: relative;
     z-index: 2;
 }
 
-    .about .container .about-title {
+    #about .container .about-title {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -599,36 +619,36 @@ h2 {
         text-align: center;
     }
 
-        .about .container .about-title h1 {
+        #about .container .about-title h1 {
             font-size: 40px;
             font-weight:700;
         }
 
-    .about .container .about-directions {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 20px;
-    }
+        #about .container .about-directions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
 
-        .about .container .about-directions a {
+        #about .container .about-directions a {
             text-decoration: none;
             color: #4F5955;
             font-size: 14px;
         }
 
-        .about .container .about-directions i {
+        #about .container .about-directions i {
             color: #4F5955;
         }
 
-        .about .container .about-directions p {
+        #about .container .about-directions p {
             font-size: 14px;
             color: #D9C3A9;
             padding: 0;
             margin: 0;
         }
 
-.right-image {
+ #about .right-image {
     position: absolute;
     bottom: -90px;
    
@@ -636,59 +656,49 @@ h2 {
 
 
 
-.about-title h1 {
-    font-size: 40px;
-}
-
-.about-directions {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.about-ceo {
+#about-ceo {
     padding: 135px 0;
 }
 
-    .about-ceo .container {
+    #about-ceo .container {
         display: flex;
     }
 
-.ceo-image {
-    margin-right: 20px;
-}
+        #about-ceo .container .ceo-image {
+            margin-right: 80px;
+        }
 
-    .ceo-image img {
-        width: auto; 
-        height:100%;
-       
-    }
+            #about-ceo .container .ceo-image img {
+                width: auto;
+                height: 100%;
+            }
 
-    .ceo-image p {
-        font-style: italic;
-        font-size: 16px;
-    }
+            #about-ceo .container .ceo-image.ceo-image p {
+                font-style: italic;
+                font-size: 16px;
+            }
 
-.description {
+#about-ceo .container.description {
     width: auto;
     margin-left:50px;
     margin-right:50px;
+    
 }
-.description .quote {
-    font-size: 20px;
-    font-weight: 300;
-    font-style: italic;
-    margin: 0;
-}
+    #about-ceo .container.description .quote {
+        font-size: 20px;
+        font-weight: 300;
+        font-style: italic;
+        margin: 0;
+    }
 
-.description .text {
-    padding-top: 25px;
-    font-size: 14px;
-    margin: 0;
-    line-height: 1.7;
-}
+    #about-ceo .container.description .text {
+        padding-top: 25px;
+        font-size: 14px;
+        margin: 0;
+        line-height: 1.7;
+    }
 
-.review {
+#review {
     position: relative;
     padding-top: 45px;
     padding-bottom: 40px;
@@ -700,50 +710,50 @@ h2 {
     height:511px;
 }
 
-    .review .testimonial {
+    #review .testimonial {
         flex: 1; 
         display: flex; 
         flex-direction: column; 
         margin-left:200px;
     }
 
-        .review .testimonial .container {
+        #review .testimonial .container {
             z-index: 2;
         }
 
-        .review .testimonial .review-text h5 {
+        #review .testimonial .container .testimonial-text h5 {
             color: #D9C3A9; 
             font-size: 14px;
             margin: 0;
         }
 
-.review-text h2 {
-    margin: 0;
-    font-size: 40px;
-    font-weight: 700;
-    padding-right: 30px;
-    padding-bottom: 40px;
-}
+        #review .testimonial .container .testimonial-text h2 {
+                margin: 0;
+                font-size: 40px;
+                font-weight: 700;
+                padding-right: 30px;
+                padding-bottom: 40px;
+         }
 
-.review-description {
-    margin: 10px;
-    font-size: 20px;
-    font-style: italic;
-    font-weight: 300;
-}
+ #review .testimonial .container .testimonial-text.review-description {
+                margin: 10px;
+                font-size: 20px;
+                font-style: italic;
+                font-weight: 300;
+  }
 
-.stars {
-    padding-top: 30px;
-    padding-bottom: 30px;
-}
+#review .testimonial .container .testimonial-text .stars {
+                padding-top: 30px;
+                padding-bottom: 30px;
+ }
 
-.author-name,
-.company-name {
-    font-size: 14px;
-    margin: 0;
-}
+            #review .testimonial .container .testimonial-text.author-name,
+            .company-name {
+                font-size: 14px;
+                margin: 0;
+            }
 
-.review-img {
+#review .review-img {
     max-width: 100%;
     width: 55%;
     height: auto;
@@ -751,12 +761,12 @@ h2 {
 }
 
 
-.our-experts {
+#our-experts {
     padding-top: 135px;
     padding-bottom: 100px;
 }
 
-    .our-experts .container .experts-title {
+    #our-experts .container .experts-title {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -764,48 +774,61 @@ h2 {
         padding-bottom: 35px;
     }
 
-        .our-experts .container .experts-title h5 {
+        #our-experts .container .experts-title h5 {
             color: #D9C3A9;
             font-size: 14px;
             margin: 0;
         }
 
-        .our-experts .container .experts-title h2 {
+        #our-experts .container .experts-title h2 {
             font-size: 40px;
             font-weight: 700;
             margin: 0;
         }
-
-.first-experts-team,
-.second-experts-team {
-    display: flex;
-    gap: 20px;
-    justify-content: space-between;
-    padding-bottom: 55px;
-}
-
-    .first-experts-team article,
-    .second-experts-team article {
-        border: 0.5px solid #ccc;
+    #our-experts .container .team .first-experts-team,.second-experts-team {
+        display: flex;
+        gap: 20px;
+        justify-content: space-between;
+        padding-bottom: 55px;
     }
 
-.pro-text {
-    padding: 15px;
-    padding-left: 20px;
-}
+        #our-experts .container .team .first-experts-team article,
+        .second-experts-team article {
+            border: 0.5px solid #ccc;
+        }
 
-.pro-name {
-    font-weight: 600;
-    font-size: 22px;
-    margin: 0;
-}
+        #our-experts .container .team .first-experts-team .pro-text {
+            padding: 15px;
+            padding-left: 20px;
+        }
 
-.pro-title {
-    font-size: 13px;
-    margin: 0;
-}
+        #our-experts .container .team .first-experts-team .pro-text .pro-name {
+            font-weight: 600;
+            font-size: 22px;
+            margin: 0;
+        }
 
-.about-contact-us {
+        #our-experts .container .team .first-experts-team .pro-text.pro-title {
+            font-size: 13px;
+            margin: 0;
+        }
+        #our-experts .container .team .second-experts-team .pro-text {
+            padding: 15px;
+            padding-left: 20px;
+        }
+
+            #our-experts .container .team  .second-experts-team .pro-text .pro-name {
+                font-weight: 600;
+                font-size: 22px;
+                margin: 0;
+            }
+
+            #our-experts .container .team  .second-experts-team .pro-text.pro-title {
+                font-size: 13px;
+                margin: 0;
+            }
+
+#about-contact-us {
     position: relative;
     overflow: hidden;
     width: 1920px;
@@ -814,62 +837,64 @@ h2 {
     margin-bottom: 15px;
 }
 
-    .about-contact-us .container {
+    #about-contact-us .container {
         display: flex;
         justify-content: space-between;
       
     }
 
-.background-image {
-    position: relative;
-    width: 100%;
-    height: auto;
-}
+        #about-contact-us .container .background-image {
+            position: relative;
+            width: 100%;
+            height: auto;
+        }
 
-.background {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 90px;
-}
+            #about-contact-us .container .background-image .background {
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 90px;
+            }
 
-.team-member {
-    position: absolute;
-    z-index: 1;
-    top:37px;
-}
+            #about-contact-us .container .background-image .team-member {
+                position: absolute;
+                z-index: 1;
+                top: 37px;
+            }
 
-.about-information-contact {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding-top: 100px;
-}
+            #about-contact-us .container .about-information-contact {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                padding-top: 100px;
+            }
 
-    .about-information-contact h2 {
-        font-size: 40px;
-    }
+                #about-contact-us .container .about-information-contact h2 {
+                    font-size: 40px;
+                }
 
-.info {
-    display: flex;
-    flex-direction: column;
-}
+                #about-contact-us .container .about-information-contact.info {
+                    display: flex;
+                    flex-direction: column;
+                }
 
-.office {
-    font-size: 14px;
-    font-weight: 700; 
-    padding-left: 5px;
-}
+                #about-contact-us .container .about-information-contact .info .office {
+                    font-size: 14px;
+                    font-weight: 700;
+                    padding-left: 5px;
+                }
 
-.office-info {
-    font-size: 14px;
-    margin: 0;
-}
+                    #about-contact-us .container .about-information-contact .info.office-info {
+                        font-size: 14px;
+                        margin: 0;
+                    }
 
-    .office-info i {
-        color: #D9C3A9;
-        padding-right: 10px;
-    }
+                        #about-contact-us .container .about-information-contact .info .office-info i {
+                            color: #D9C3A9;
+                            padding-right: 10px;
+                        }
+
+
 #services {
     padding-top: 70px; 
     padding-bottom: 90px;
